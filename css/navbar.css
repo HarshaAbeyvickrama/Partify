@@ -1,0 +1,10 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+.navBar{
+    background-color: blueviolet;
+    height: 90vh;
+    display: inline-block;
+    
+}
