@@ -7,11 +7,12 @@ function jsFunction1() {
     if(select=='user'){
       vendor.style.display='none';
       user.style.display='block';
-    }
-    if(select=='vendor'){
+    }else if(select=='vendor'){
       user.style.display='none';
       vendor.style.display='block';
+    }else{
+      user.style.display='none';
+      vendor.style.display='none';
     }
-    console.log('working');
 }
 

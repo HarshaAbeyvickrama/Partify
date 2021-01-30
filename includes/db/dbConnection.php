@@ -4,7 +4,7 @@
         private static $_instance; //The single instance
         private $_host = "localhost";
         private $_username = "root";
-        private $_password = "";
+        private $_password = "mysql";
         private $_database = "1108";
     
         public static function getInstance() {

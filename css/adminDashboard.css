@@ -1,0 +1,35 @@
+.mainUP{
+    margin: 15px;
+    background-color: #252954;
+    height: 250px;
+    border-radius: 8px;
+    color:  rgb(225, 225, 226);
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
+}
+.mainUP .card{
+    background: rgb(26, 29, 58);
+    margin: 30px;
+    border-radius: 15px;
+}
+
+.mainUP .card h3{
+    margin: 25px 0px;
+    
+    text-align: center;
+    font-size: 30px;
+}
+.mainUP .card p{
+    text-align: center ;
+    font-size: 60px;
+
+}
+.mainUP .c1{
+    background-color: #ffa01ac5;
+}
+.mainUP .c2{
+    background-color: #009432;
+}
+.mainUP .c3{
+    background-color: #0652DD;
+}

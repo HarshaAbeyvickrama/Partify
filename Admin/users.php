@@ -4,7 +4,6 @@
         header("Location: ../login.php");
     }
     
-    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,31 +14,30 @@
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/navbar.css">
     <link rel="stylesheet" type="text/css" href="../css/header2.css">
-    <link rel="stylesheet" type="text/css" href="../css/profile.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
-    <link rel="stylesheet" type="text/css" href="../css/adminDashboard.css">
+    <link rel="icon" href="../Assets/partify.gif">
 </head>
 <body>
-   
 <div class="container">
     <?php 
         include('./nav.php'); 
     ?>
     <div class="right">
-    <?php
+        <?php
         include('../Includes/header2.php');
-        include('../Controls/general.php');
-    ?>
-        <div class="mainUP">
-            <div class="card c1">
-                <h3>Events</h3><p> <?php echo getEventCount(); ?></p>
-            </div>
-            <div class="card c2">
-                <h3>Vendors</h3> <p><?php echo getVendorCount(); ?></p>
-            </div>
-            <div class="card c3">
-                <h3>Accounts</h3><p><?php echo getUserCount(); ?></p> 
-            </div>
+        
+        ?>
+        <div class="users midContent">
+            <?php
+            include('../Controls/general.php');
+            $users = getAllUsers();    
+            while($row=mysqli_fetch_assoc($users)){
+                $name = $row['fName'].' '.$row['lName'];
+                echo $name;
+            }
+            ?>
         </div>
-    </div>    
+        
+    </div>
+    <!-- show all users -->
 </div>

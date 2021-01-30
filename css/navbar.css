@@ -1,10 +1,49 @@
 body{
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 .navBar{
-    background-color: blueviolet;
-    height: 90vh;
-    display: inline-block;
     
+    height: 100vh;
+    display: inline-block;
+    background-color: #252954;
+    color: whitesmoke;
+    position: static;
+    
+}
+.navBar h2{
+    padding-top: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+    font-size: 35px;
+
+}
+.navBar ul{
+    list-style-type: none;
+    width: 100%;
+    padding-left: 0;
+    
+}
+.navBar ul li{
+    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-left: 0;
+    left: 0;
+    
+    
+}
+.navBar ul li a{
+    color: rgb(225, 225, 226);
+    font-size: 20px;
+    text-decoration: none;
+    padding-left: 25px;
+}
+.navBar ul li:hover{
+    background-color:rgb(225, 225, 225, 0.5);
+}
+.navBar img{
+    margin: 15px;
+    width: 200px;
+    border-radius: 50%;
 }

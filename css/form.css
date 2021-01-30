@@ -1,0 +1,41 @@
+.form{
+    background-color:whitesmoke;
+    padding-left: 25px;
+    scroll-behavior: auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.form .title h2{
+    text-align: center;
+    font-size: 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.label{
+    padding-top: 10px;    
+    padding-bottom: 10px; 
+    font-size: 20px;
+    padding-bottom: 15px;   
+}
+.section{
+    padding-bottom: 10px;
+}
+.checkbox span{
+    font-size: 20px;
+
+}
+.span{
+    font-size: 15px;
+}
+.btnSubmit button{
+    background-color:green;
+    color: whitesmoke;
+    border-style: none;
+    padding: 8px;
+    width: 100px;
+    margin-top: 10px;
+}
+.btnSubmit button:hover{
+    cursor: pointer;
+    box-shadow: 5px 10px 18px #888888;
+}

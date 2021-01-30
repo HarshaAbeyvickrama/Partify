@@ -1,4 +1,39 @@
-.nav{
-    background-color: brown;
-    height: 10vh;
+*{margin: 0;border: 0;}
+.menubg{
+    position: static;
+    background-color: black;
+    box-sizing: border-box;
+}
+.menu{
+    width:100%;
+    overflow: auto;
+}
+
+    .menu a{       
+        float:left;
+        font-size: 20px;
+        padding-top: 35px;
+        letter-spacing: 1px;
+        text-decoration: none;
+        font-family:Impact,'Arial Narrow Bold', sans-serif;
+        color:#ffffff;
+        border-right-style:solid;
+        border-width: thin;
+        border-color: #ffffff;
+        text-transform: uppercase;
+        width:14% ;
+        height: 65px;
+        text-align: center;
+    }
+.menulogo{
+    width:14%;
+    float: left; 
+    border-right-style:solid;
+    border-width: thin;
+    border-color: #ffffff;
+}
+
+.menu a:hover{
+font-size:22px;
+color: #7AACAC;
 }

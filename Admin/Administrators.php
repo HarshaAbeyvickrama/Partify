@@ -17,7 +17,6 @@
     <link rel="stylesheet" type="text/css" href="../css/header2.css">
     <link rel="stylesheet" type="text/css" href="../css/profile.css">
     <link rel="stylesheet" type="text/css" href="../css/footer.css">
-    <link rel="stylesheet" type="text/css" href="../css/adminDashboard.css">
 </head>
 <body>
    
@@ -28,18 +27,29 @@
     <div class="right">
     <?php
         include('../Includes/header2.php');
-        include('../Controls/general.php');
     ?>
-        <div class="mainUP">
-            <div class="card c1">
-                <h3>Events</h3><p> <?php echo getEventCount(); ?></p>
-            </div>
-            <div class="card c2">
-                <h3>Vendors</h3> <p><?php echo getVendorCount(); ?></p>
-            </div>
-            <div class="card c3">
-                <h3>Accounts</h3><p><?php echo getUserCount(); ?></p> 
-            </div>
-        </div>
-    </div>    
+    <div class="midContent">
+        <?php
+        include('../Controls/general.php');
+        $admins = getAllAdmins();    
+        while($row=mysqli_fetch_assoc($admins)){
+            $name = $row['fName'].' '.$row['lName'];
+            echo $name;
+        }
+        
+        ?>
+    
+    </div>
+    <?= include('../Includes/footer.php'); ?>
+    </div>
+    <!-- show all users -->
+
+
+    
+
+
+
+
 </div>
+</body>
+</html>

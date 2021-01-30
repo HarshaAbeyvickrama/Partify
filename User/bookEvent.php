@@ -1,17 +1,25 @@
 <?php
+    session_start();
+    if(!isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']!='true' && $_SESSION['userType']!='User'){
+        header("Location: ../login.php");
+    }
     include('../Includes/header.php');
-    include('../Includes/navbar.php');
+    
 ?>
     <div class="container">
-        <form action="../Controls/userControl.php" method="post">
+        <?php include('./nav.php'); ?>
+        <form action="../Controls/userControl.php" method="post" class="form">
             <div class="section">
-                <div class="title">Book New Event</div>
+                <div class="title"><h2>Book New Event</h2></div>
                 <div class="label">Event Name</div>
                 <input type="text" name="eventName" id="eventName" class="input" required>
                 <div class="label">Event Type</div>
                 <select name="eventType" id="eventType" class="select" required>
                     <option value="" class="option">- none -</option>
-                    <!-- <option value="" class="option"></option> add items from php -->
+                    <option value="BirthDay Party" class="option">BirthDay Party</option>
+                    <option value="Wedding Ceromony" class="option">Wedding Ceromony</option>
+                    <option value="Get Together" class="option">Get Together</option>
+                    <option value="Bachelors Party" class="option">Bachelors Party</option>
                 </select>
                 <div class="label">Event Location</div>
                 <input type="text" name="eventLocation" id="eventLocation" class="input">
@@ -38,6 +46,8 @@
                     <option value="" class="option">- none -</option>
                     <!-- <option value="" class="option"></option> add items from php -->
                 </select>
+                <div class="label">Number Of Plates</div>
+                <input type="number" name="noOfPlates" id="noOfPlates" min="250">
             </div>
             <div class="checkbox">
                     <input type="checkbox" name="needPhotography" id="needPhotography" class="box" onchange="displaySection('secPhotography','needPhotography')">
@@ -93,5 +103,6 @@
         </form>
         
     </div>
+    <?php include('../Includes/footer.php') ?>
 </body>
 </html>

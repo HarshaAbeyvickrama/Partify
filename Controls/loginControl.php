@@ -15,7 +15,7 @@
         $count=mysqli_num_rows($res)>0;
         if($count>0){
             $row=$res->fetch_assoc();
-            $_SESSION['id']=$row['userId'];
+            $_SESSION['userId']=$row['userId'];
             $_SESSION['username']=$username;
             $_SESSION['userType']=$row['userType'];
             $_SESSION['loggedIn']='true';
