@@ -1,13 +1,14 @@
 body{
     margin: 0;
     padding: 0;
+    /* overflow: hidden; */
 }
 .navBar{
     
-    height: 90vh;
+    height: 100vh;
     display: inline-block;
-    background-color: #121212;
-    color: white;
+    background-color: #252954;
+    color: whitesmoke;
     position: static;
     
 }
@@ -40,4 +41,9 @@ body{
 }
 .navBar ul li:hover{
     background-color:rgb(225, 225, 225, 0.5);
+}
+.navBar img{
+    margin: 15px;
+    width: 200px;
+    border-radius: 50%;
 }

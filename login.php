@@ -16,6 +16,8 @@
             <?php
                 if(isset($_SESSION['status'])){
                     echo $_SESSION['status'];
+                    session_unset();
+                    session_destroy();
                 }
             ?>
         </div>

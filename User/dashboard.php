@@ -3,13 +3,33 @@
     if(!isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']!='true' && $_SESSION['userType']!='User'){
         header("Location: ../login.php");
     }
-    include('../Includes/header.php');
+    
     
 ?>
-<div class="body">
-    <?php include('../Includes/navbar.php'); ?>
-    <link rel="stylesheet" href="../css/userDashboard.css">
-    <form action="../Controls/logoutControl.php" method="post">
-        <button type="submit" name="btnLogout" id="btnLogout">Logout</button>
-    </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account</title>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/navbar.css">
+    <link rel="stylesheet" type="text/css" href="../css/header2.css">
+    <link rel="stylesheet" type="text/css" href="../css/profile.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
+    <link rel="stylesheet" type="text/css" href="../css/adminDashboard.css">
+</head>
+<body>
+   
+<div class="container">
+    <?php 
+        include('./nav.php'); 
+    ?>
+    <div class="right">
+    <?php
+        include('../Includes/header2.php');
+        include('../Controls/general.php');
+    ?>
+        
+    </div>    
 </div>
