@@ -1,7 +1,7 @@
 <?php
-   echo "<link rel='stylesheet' type='text/css' href='css/contactus.css' />";
-   echo "<script type='text/javascript' src='js/contactus.js'></script>";
-  include("contactus_dbconnect.php");
+   echo "<link rel='stylesheet' type='text/css' href='./css/contactus.css' />";
+   echo "<script type='text/javascript' src='./js/contactus.js'></script>";
+  include("./CONTACT US/contactus_dbconnect.php");
   
 ?>
 <div class="container">
@@ -12,7 +12,7 @@
   <div class="row">
     <div class="column">
       <div id="error_messege"></div>
-      <form id="myform" action="contactus_user_process.php" method="POST" onsubmit="return validation()">
+      <form id="myform" action="./CONTACT US/contactus_user_process.php" method="POST" onsubmit="return validation()">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Your Name..">
         <label for="email">Email</label>
