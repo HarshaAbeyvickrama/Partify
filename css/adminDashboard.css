@@ -33,3 +33,10 @@
 .mainUP .c3{
     background-color: #0652DD;
 }
+.recent{
+    margin: 15px;
+    background-color: #252954;
+    height: 100%;
+    border-radius: 8px;
+    color:  rgb(225, 225, 226);
+}

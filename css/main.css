@@ -13,4 +13,5 @@ body{
     border-radius: 15px;
     color:  rgb(225, 225, 226);
     height: 50vh;
+    overflow: auto;
 }

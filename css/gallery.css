@@ -1,0 +1,85 @@
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:rgb(32, 32, 32);
+}
+
+h1{
+  text-align: center;
+  color: rgb(35, 146, 35);
+  margin: 30px 0 50px;
+}
+
+
+.gallery {
+    margin: 5px;
+    border: 0px solid rgb(165, 164, 164);
+    float: left;
+    width: 500px;
+    padding: 5px;
+    
+  }
+  
+  .gallery img {
+    transition: 1s;
+    width: 100%;
+    height: 100%;
+  }
+
+  .gallery:hover {
+    border: 0px solid #777;
+  }  
+  
+  .gallery img:hover {
+    filter: greyscale(100%);
+    transform: scale(1.1);
+  }
+  
+  .dds {
+    color: blanchedalmond;
+    padding: 17px;
+    text-align: center;
+  }
+
+  .weddings {
+    margin: 5px;
+    border: 0px solid rgb(165, 164, 164);
+    float: right;
+    width: 500px;
+    padding: 5px;
+    
+  }
+
+  .ourservices3 {
+    margin: 5px;
+    border: 0px solid rgb(165, 164, 164);
+    float: left;
+    width: 500px;
+    padding: 5px;
+    
+  }
+  .ourservices2 {
+    margin: 5px;
+    border: 0px solid rgb(165, 164, 164);
+    float: right;
+    width: 500px;
+    padding: 5px;
+    
+  }
+
+  .ourservices1 {
+    margin: 5px;
+    border: 0px solid rgb(165, 164, 164);
+    float: right;
+    width: 500px;
+    padding: 5px;
+    
+  }
+
+  .ourservices0 {
+    margin: 5px;
+    border: 0px solid rgb(165, 164, 164);
+    float: left;
+    width: 500px;
+    padding: 5px;
+    
+  }

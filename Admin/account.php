@@ -2,9 +2,7 @@
     session_start();
     if(!isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']!='true' && $_SESSION['userType']!='Admin'){
         header("Location: ../login.php");
-    }
-    
-    
+    }  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +26,7 @@
     <?php
         include('../Includes/header2.php');
         include('../Includes/profile.php');  
-        include('../Includes/footer.php');  
+        // include('../Includes/footer.php');  
     ?>
     </div>
         

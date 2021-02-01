@@ -41,5 +41,8 @@
                 <h3>Accounts</h3><p><?php echo getUserCount(); ?></p> 
             </div>
         </div>
+        <div class="recent">
+            
+        </div>
     </div>    
 </div>

@@ -17,7 +17,6 @@
         <!-- <img src="../Assets/partify.gif" alt=""> -->
     </div>
     <div class="username">
-        <p>Logged In As <?php echo $_SESSION['username'];?></p>
-    
+        <p >Logged In As <?php echo $_SESSION['username'];?></p>
     </div>
 </div>

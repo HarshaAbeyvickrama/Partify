@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Account</title>
+    <title>Vendors</title>
     <link rel="stylesheet" type="text/css" href="../css/main.css">
     <link rel="stylesheet" type="text/css" href="../css/navbar.css">
     <link rel="stylesheet" type="text/css" href="../css/header2.css">
@@ -27,12 +27,13 @@
         
         ?>
         <div class="midContent">
+        <h2>Vendors</h2>
         <?=
         include('../Controls/general.php');
         $vendors = getAllVendors();    
         while($row=mysqli_fetch_assoc($vendors)){
-            $name = $row['fName'].' '.$row['lName'];
-            echo $name;
+            $name = $row['spId'].' '.$row['name'].' '.$row['catering'].' '.$row['photography'].' '.$row['videograpghy'].' '.$row['decoration'];
+            echo $name.'<br>';
         }
         ?>
         </div>

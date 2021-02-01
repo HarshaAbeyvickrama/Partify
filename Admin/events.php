@@ -27,9 +27,24 @@
     <div class="right">
         <?php 
             include('../Includes/header2.php');
+
+        ?>
+        <div class="midContent">
+            <?=
             include('../Controls/general.php');
             //all events
-        ?>
+            $events = getAllEvents();
+            while($row = mysqli_fetch_assoc($events)){
+                echo $row['bookingId'];
+                echo $row['eventName'];
+                echo $row['type'];
+                echo $row['date'];
+                echo '<br>';
+            }
+            ?>
+        </div>
+            
+    
     
     <?php include('../Includes/footer.php'); ?>
     </div>
