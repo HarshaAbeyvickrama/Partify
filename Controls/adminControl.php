@@ -10,7 +10,17 @@
     $connection = $db->getConnection();
 
     if(isset($_POST['deleteEvent'])){
-        $eventId = $_POST['']
+        echo 'yes';
+        $eventId = $_POST['bId'];
+        $sql = 'DELETE FROM booking WHERE bookingId ='.$eventId;
+        $res = mysqli_query($connection,$sql);
+        if($res===TRUE){
+            $_SESSION['state']="Booking Deleted Successfully";
+            header("location: ../Admin/events.php");
+        }else {
+            echo  'not dlyed';
+        }
+
     }
 
 ?>
