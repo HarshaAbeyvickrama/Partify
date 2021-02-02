@@ -28,19 +28,48 @@
             include('../Controls/general.php');  
 
         ?>
-        <div class="midContent">
-        <?php
-            $res = getUserBooking();
-            while($row = mysqli_fetch_assoc($res)){
-                echo $row['eventName'];
-                echo '<br>';
+        <div class="midContent booking">
+            
+                <div class="tabel">
+                <?php
+                        echo "<table class='bookingTable'>
+                        <thead>
+                        <tr>
+                        <th class='col col1'>Event Name</th>
+                        <th class='col col2'>Type</th>
+                        <th class='col col3'>Date</th>
+                        <th class='col colBtn'></th>
+                        <th class='col colBtn'></th></tr></thead><tbody>";
+                        $res = getUserBooking();
+                        while($row = mysqli_fetch_assoc($res)){
+                            $name = $row['eventName'];
+                            $type = $row['type'];
+                            $date = $row['date'];
+                            $status = $row['status'];
+                            $bookingId = $row['bookingId'];
+                            echo "<tr><td>$name</td><td>$type</td><td>$date</td>";
+                            echo '<td>';
+                            
+                            echo '<form action="./viewEvent.php" method="post">
+                            <input type="hidden" name="bId" value="'.$bookingId.'">
+                            <button type="submit" name="viewEvent" class="btn btnview">View</button>
+                            </form></td>';
+                            echo '<td><form action="./general.php" method="post">
+                            <input type="hidden" name="bId" value="'.$bookingId.'">
+                            <button type="submit" name="deleteEvent" id="deleteEvent" class="btn btnDelete">Delete</button>
+                            </form></td></tr>';
+                        }
+                        echo '</tbody></table>';
+                ?>
+                </div>
+                
 
-            }
-        ?>
+            
+        
     </div>
     </div>
     
-        
+    
            
     </div>
     
