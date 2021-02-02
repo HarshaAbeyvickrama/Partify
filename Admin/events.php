@@ -29,6 +29,12 @@
         ?>
         <div class="midContent adminViewEvents">
             <?php
+            if(isset($_SESSION['state'])){
+                $state = $_SESSION['state'];
+                unset($_SESSION['state']);
+                echo '<h3 style="text-align: center; padding-top: 15px; padding-bottom: 0; color:red">'.$state.'</h3>';
+            }
+           
             include('../Controls/general.php');
             //all events
             $events = getAllEvents();
@@ -60,7 +66,7 @@
                                 <input type="hidden" name="bId" value="'.$row['bookingId'].'">
                                 <button type="submit" name="viewEvent" class="btnView btn">View</button>
                                 </form></td>';
-                                echo '<td><form action="./viewEvent.php" method="post">
+                                echo '<td><form action="../Controls/adminControl.php" method="POST">
                                 <input type="hidden" name="bId" value="'.$row['bookingId'].'">
                                 <button type="submit" name="deleteEvent" id="deleteEvent" class="btn btnDelete">Delete</button>
                                 </form></td></tr>';

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    if(!isset($_SESSION['loggedIn']) && $_SESSION['loggedIn']!='true' && $_SESSION['userType']!='User'){
+    if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn']!='true' || $_SESSION['userType']!='User'){
         header("Location: ../login.php");
     }  
 ?>
@@ -50,11 +50,11 @@
                             echo "<tr><td>$name</td><td>$type</td><td>$date</td>";
                             echo '<td>';
                             
-                            echo '<form action="./viewEvent.php" method="post">
+                            echo '<form action="" method="post">
                             <input type="hidden" name="bId" value="'.$bookingId.'">
                             <button type="submit" name="viewEvent" class="btn btnview">View</button>
                             </form></td>';
-                            echo '<td><form action="./general.php" method="post">
+                            echo '<td><form action="../Controls/adminControl.php" method="post">
                             <input type="hidden" name="bId" value="'.$bookingId.'">
                             <button type="submit" name="deleteEvent" id="deleteEvent" class="btn btnDelete">Delete</button>
                             </form></td></tr>';
