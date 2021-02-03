@@ -1,10 +1,8 @@
 .container{
     display: grid;
     grid-template-columns: 15% 85%;
-    /* background-color: chartreuse; */
 }
 body{
-    /* background-color: rgb(212, 198, 212); */
     background-color: #0e0e23;
 }
 .midContent{
@@ -12,6 +10,85 @@ body{
     margin: 15px;
     border-radius: 15px;
     color:  rgb(225, 225, 226);
+    height: 93vh;
+    overflow: auto;
+}
+.booking{
+    height: 93vh;
+    
+}
+.midContent table{
+    /* display: block; */
+    overflow: auto;
+    /* height: auto; */
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+.bookingTable{
+    column-width: 150px;
     height: 50vh;
+    width: auto;
+    margin-top: 40px;
+    margin-left: 50px;
+    overflow: auto;
+    /* border: 1px solid white; */
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 100px;
+    
+}
+.bookingTable .col{
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+.bookingTable .col1{
+    width: 300px;
+}
+
+.bookingTable .col2{
+    width: 200px;
+}
+.bookingTable .col3{
+    width: 150px;
+}
+
+
+.bookingTable td{
+    width: auto;
+}
+.bookingTable .col5{
+    width: 200px;
+}
+.bookingTable th{
+    font-size: 20px;
+    padding: 10px;
+}
+.bookingTable tr td{
+    padding: 10px 35px 10px 35px;
+    
+}
+
+.btn{
+    border-style: none;
+    color: rgb(225, 225, 226);
+    width: 100px;
+    font-size: 15px;
+    border-radius: 15px;
+
+    
+}
+.btnView{
+    background-color: green; 
+}
+.btnDelete{
+    background-color: red;
+}
+/* .btn:hover{
+    cursor: pointer;
+} */
+
+.adminViewEvents{
+    height: 100vh;
     overflow: auto;
 }

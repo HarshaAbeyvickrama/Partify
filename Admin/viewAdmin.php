@@ -4,10 +4,3 @@
         header("Location: ../login.php");
     }  
 ?>
-<div class="container">
-    <?php include('./nav.php'); ?>
-
-    <!-- add new administrator form should come here -->
-
-
-</div>
