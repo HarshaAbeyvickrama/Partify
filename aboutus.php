@@ -1,5 +1,6 @@
 <?php
 echo "<link rel='stylesheet' type='text/css' href='css/aboutus.css' />";
+include('./includes/header.php');
 ?>
 <div class="bgded overlay" style="background-image:url('Assets/aboutus4.JPG');"> 
   <div id="pageintro">

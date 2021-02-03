@@ -1,7 +1,9 @@
 <?php
-   echo "<link rel='stylesheet' type='text/css' href='./css/contactus.css' />";
-   echo "<script type='text/javascript' src='./js/contactus.js'></script>";
-  include("./CONTACT US/contactus_dbconnect.php");
+    echo "<link rel='stylesheet' type='text/css' href='./css/contactus.css' />";
+    echo "<script type='text/javascript' src='./js/contactus.js'></script>";
+    
+    include("./CONTACT US/contactus_dbconnect.php");
+    include('includes/header.php');
   
 ?>
 <div class="container">
@@ -25,7 +27,7 @@
       </form>
     </div>
 	<div class="column">
-      <img src="logo.jpg" style="width:100%"><br><br><br>
+      <img src="Assets/partify.gif" style="width:100%"><br><br><br>
 	<p class="p1">Email Us: abcabcabcabcabcabc@gmail.com <br> Call Us: 0123456789</p>
     </div>
   </div>
