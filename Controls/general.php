@@ -125,6 +125,10 @@
         $sql="SELECT * FROM admindetail WHERE adminId=$uid";
         return mysqli_query($connection,$sql);
     }
-
+    // function UserD($id){
+    //     global $connection;
+    //     $sql="SELECT * FROM userdetail WHERE userId=$id";
+    //     return mysqli_query($connection,$sql);
+    // }
 
 ?>

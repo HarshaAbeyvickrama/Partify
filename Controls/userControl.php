@@ -301,6 +301,26 @@
         
     }
     // getEvent('48');
+
+    if(isset($_POST['updateUserBtn'])){
+        $uid = $_POST['userId'];
+        $email = $_POST['email'];
+        $fName = $_POST['fName'];
+        $lName = $_POST['lName'];
+        $gender = $_POST['gender'];
+        $dob = $_POST['dob'];
+        $contactNo = $_POST['contactNo'];
+        $address = $_POST['address'];
+        $sql = "UPDATE userdetail SET email='$email',fName='$fName',lName='$lName',gender='$gender',dob='$dob',contactNo='$contactNo',address='$address' WHERE userId='$uid'";
+        echo $sql;
+        if(mysqli_query($connection,$sql)){
+            $_SESSION['updateAdmin'] = 'User Updated Succesfully';
+        }else{
+            $_SESSION['updateAdmin'] = 'User Update Failed';
+        }
+        header("location: ../Admin/Users.php");
+
+    }
 ?>
 
 
