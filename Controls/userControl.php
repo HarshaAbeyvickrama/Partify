@@ -161,12 +161,13 @@
                     if(mysqli_query($connection,$query)){
                         $sqlDecoration = "UPDATE decorationbooking SET spId='$decorator',decorationType ='$decoratorPackage' WHERE bookingId='$bookId'";
                     }else{
-                        $sqlDecoration = "INSERT INTO decorationbooking VALUES ('$bookingID','$decoration','$decoratorPackage')";
+                        $sqlDecoration = "INSERT INTO decorationbooking VALUES ('$bookingID','$decorator','$decoratorPackage')";
                     }
                 }else{
-                    $sqlDecoration = "INSERT INTO decorationbooking VALUES ('$bookingID','$decoration','$decoratorPackage')";
+                    $sqlDecoration = "INSERT INTO decorationbooking VALUES ('$bookingID','$decorator','$decoratorPackage')";
                    
                 }
+                echo $sqlDecoration;
                 $result = mysqli_query($connection,$sqlDecoration);
                 if(!$result){
                     $status=FALSE;

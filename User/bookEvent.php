@@ -97,7 +97,7 @@
                         $res = getServicesProviders('photo');
                         while($row = mysqli_fetch_assoc($res)){
                            $sp = $row['albumType'];
-                           echo "<option value='.$sp.' class='option'>$sp</option>";
+                           echo "<option value='$sp' class='option'>$sp</option>";
                         }
                     ?>  
                     
@@ -134,7 +134,7 @@
                         $res = getServicesProviders('video');
                         while($row = mysqli_fetch_assoc($res)){
                            $sp = $row['type'];
-                           echo "<option value='.$sp.' class='option'>$sp</option>";
+                           echo "<option value='$sp' class='option'>$sp</option>";
                         }
                     ?>  
                 </select>
@@ -168,7 +168,7 @@
                             $res = getServicesProviders('deco');
                             while($row = mysqli_fetch_assoc($res)){
                             $sp = $row['type'];
-                            echo "<option value='.$sp.' class='option'>$sp</option>";
+                            echo "<option value='$sp' class='option'>$sp</option>";
                             }
                         ?>
                     </select>

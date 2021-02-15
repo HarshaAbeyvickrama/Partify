@@ -123,7 +123,7 @@
                            
                            if($event['photography']=='y' || $event['photography']=='Y' ){ 
                                 $resPhoto = getPhoto($_POST['bId']);
-                                if($resPhoto['spId']==$spvId){
+                                if($resPhoto['spId']==$spId){
                                     echo "<option value='$spId' class='option' ";
                                     echo "selected='selected'";
                                     echo ">$sp</option> ";
@@ -145,7 +145,7 @@
                         $res = getServicesProviders('photo');
                         while($row = mysqli_fetch_assoc($res)){
                            $sp = $row['albumType'];
-                           if($resPhoto['spId']==$spvId){
+                           if($resPhoto['spId']==$spId){
                                 echo "<option value='$spId' class='option' ";
                                 echo "selected='selected'";
                                 echo ">$sp</option> ";
@@ -178,7 +178,7 @@
                            echo "<option value='$spId' class='option'>$sp</option>";
                            if($event['videography']=='y' || $event['videography']=='Y' ){ 
                                 $res = getVideo($_POST['bId']);
-                                if($res['spId']==$spvId){
+                                if($res['spId']==$spId){
                                     echo "<option value='$spId' class='option' ";
                                     echo "selected='selected'";
                                     echo ">$sp</option> ";
@@ -199,7 +199,7 @@
                         $res = getServicesProviders('video');
                         while($row = mysqli_fetch_assoc($res)){
                            $sp = $row['type'];
-                           if($resPhoto['spId']==$spvId){
+                           if($resPhoto['spId']==$spId){
                             echo "<option value='$spId' class='option' ";
                             echo "selected='selected'";
                             echo ">$sp</option> ";
@@ -220,21 +220,22 @@
                 <div class="label">Select Decorator</div>
                 <select name="decorator" id="decorator" class="select">
                     <option value="" class="option">- none -</option>
-
+                    
                     <?php
                         $res = getServicesProviders('deco');
                         while($row = mysqli_fetch_assoc($res)){
                            $sp = $row['name'];
                            $spvId = $row['spId'];
+                           echo "<script>alert(".$spvId.")</script>";
                            if($event['decoration']=='y' || $event['decoration']=='Y' ){ 
                             $res = getDeco($_POST['bId']);
                                 if($res['spId']==$spvId){
-                                    echo "<option value='$spId' class='option' ";
+                                    echo "<option value='$spvId' class='option' ";
                                     echo "selected='selected'";
                                     echo ">$sp</option> ";
                             
                                 }else{
-                                    echo "<option value='$spId' class='option'>$sp</option>";  
+                                    echo "<option value='$spvId' class='option'>$sp</option>";  
                                 }
                             }
                         }   
@@ -249,12 +250,12 @@
                         $res = getServicesProviders('deco');
                         while($row = mysqli_fetch_assoc($res)){
                             if($res['spId']==$spvId){
-                                echo "<option value='$spId' class='option' ";
+                                echo "<option value='$spvId' class='option' ";
                                 echo "selected='selected'";
                                 echo ">$sp</option> ";
                         
                             }else{
-                                echo "<option value='$spId' class='option'>$sp</option>";  
+                                echo "<option value='$spvId' class='option'>$sp</option>";  
                             }
                         }
                     ?>
@@ -274,7 +275,7 @@
                         while($row = mysqli_fetch_assoc($res)){
                            $sp = $row['name'];
                            $spvId = $row['spId'];
-                           echo "<option value='$spvId' class='option'>$sp</option>";
+                           echo "<option value='$spId' class='option'>$sp</option>";
                            if($event['location']=='y' || $event['location']=='Y' ){ 
                                 $res = getLocation($_POST['bId']);
                                     if($res['spId']==$spvId){
@@ -301,7 +302,7 @@
                              $res = getServicesProviders('location');
                             while($row = mysqli_fetch_assoc($res)){
                             $sp = $row['type'];
-                                if($resPhoto['spId']==$spvId){
+                                if($resPhoto['spId']==$spId){
                                     echo "<option value='$spId' class='option' ";
                                     echo "selected='selected'";
                                     echo ">$sp</option> ";

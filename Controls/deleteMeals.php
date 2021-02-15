@@ -83,7 +83,7 @@ if(isset($_POST['delete_btn'])){
         $sprovider="SELECT * FROM service WHERE spId=$user";
         $spresult= mysqli_query($connection,$sprovider);
         $data=mysqli_fetch_assoc($spresult);
-        if($data['catering']=='N' && $data['photography']=='N' && $data['videography']=='N' && $data['decoration'] && $data['location']=='N'){
+        if($data['catering']=='N' && $data['photography']=='N' && $data['videography']=='N' && $data['decoration']=='N' && $data['location']=='N'){
             $remove="DELETE FROM service WHERE spId=$user";
             $sremove=mysqli_query($connection,$remove);
             if($remove){
