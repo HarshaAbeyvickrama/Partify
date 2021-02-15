@@ -14,7 +14,7 @@
    
        
         <div class="container">
-            <form action="../Controls/vendorEdit.php" method="post" class="form">
+            <form action="../Controls/vendorControl.php" method="post" class="form">
             
             <div class="section">
                 <div class="title">Select the services you wish to provide</div>

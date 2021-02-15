@@ -160,7 +160,7 @@
                 }
             ?>
             <div class="form">
-                <form action="../editServices.php" method="post">
+                <form action="../Vendor/editServices.php" method="post">
                     <button class="submit" type="submit" name="editbtn" > EDIT SERVICES</button>
                 </form>
             </div>

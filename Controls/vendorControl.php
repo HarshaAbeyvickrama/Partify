@@ -1,7 +1,9 @@
 <?php
 require_once('../Includes/db/dbConnection.php');
 include('./validate.php');
-
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 $db = DBConnection::getInstance();
 $connection = $db->getConnection();
 
