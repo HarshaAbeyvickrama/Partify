@@ -17,7 +17,7 @@
         <div class="card-body">
             <div class="table">
             <?php
-                $connection = mysqli_connect("localhost","root","","1108");
+                $connection = mysqli_connect("localhost","root","mysql","partify");
                 $query = 'SELECT * FROM booking WHERE userId='.$bookingId;
                 $query_run = mysqli_query($connection, $query);
             ?>

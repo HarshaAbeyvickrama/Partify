@@ -25,7 +25,7 @@
                     }else if($_SESSION['userType']=='Admin'){
                         echo "<li><a href='./Admin/dashboard.php'>Dashboard</a></li>";
                     }else if($_SESSION['userType']=='Vendor'){
-                        echo "<li><a href='./Vendor/dashboard.php'>Dashboard</a></li>";
+                        echo "<li><a href='./Vendor/viewOrders.php.php'>Dashboard</a></li>";
                     }else{}
                     echo " <li><a href='./Controls/logoutControl.php'>Log Out</a></li>";
                 }else{

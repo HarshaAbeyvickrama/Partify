@@ -123,7 +123,8 @@
                            
                            if($event['photography']=='y' || $event['photography']=='Y' ){ 
                                 $resPhoto = getPhoto($_POST['bId']);
-                                if($resPhoto['spId']==$spvId){
+                                if($resPhoto['spId']==$spId){
+                                    $currentSpId = $spId;
                                     echo "<option value='$spId' class='option' ";
                                     echo "selected='selected'";
                                     echo ">$sp</option> ";
@@ -141,12 +142,15 @@
                 <div class="label">Select Package</div>
                 <select name="photographyPackage" id="photographyPackage" class="select">
                     <option value="" class="option">- none -</option>
+                    
                     <?php
-                        $res = getServicesProviders('photo');
+                    
+                        $res = getServices('photo');
                         while($row = mysqli_fetch_assoc($res)){
                            $sp = $row['albumType'];
-                           if($resPhoto['spId']==$spvId){
-                                echo "<option value='$spId' class='option' ";
+                           
+                           if($resPhoto['spId']==$currentSpId){
+                                echo "<option value='$currentSpId' class='option' ";
                                 echo "selected='selected'";
                                 echo ">$sp</option> ";
                         
@@ -175,17 +179,23 @@
                           
                            $sp = $row['name'];
                            $spId = $row['spId'];
-                           echo "<option value='$spId' class='option'>$sp</option>";
+                           
+                        //    echo "<option value='$spId' class='option'>$sp</option>";
                            if($event['videography']=='y' || $event['videography']=='Y' ){ 
-                                $res = getVideo($_POST['bId']);
-                                if($res['spId']==$spvId){
-                                    echo "<option value='$spId' class='option' ";
-                                    echo "selected='selected'";
-                                    echo ">$sp</option> ";
-                                }
-                            }else{
-                                echo "<option value='$spId' class='option'>$sp</option>";  
-                            }
+                                $resVideo = getVideo($_POST['bId']);
+                                
+                                $bookedSp = $resVideo['spId'];
+                                echo "<script>console.log(".$bookedSp.")</script>";
+                                if($bookedSp === $spId){echo "<script>console.log(matced)</script>";}
+                            //         echo "<script>console.log(matched)</script>";
+                            //         $currentSpId = $spId;
+                            //         echo "<option value='$spId' class='option' ";
+                            //         echo "selected='selected'";
+                            //         echo ">$sp</option> ";
+                            //     }
+                            // }else{
+                            //     echo "<option value='$spId' class='option'>$sp</option>";  
+                             }
                             
                         }
                         
@@ -196,11 +206,12 @@
                     <option value="" class="option">- none -</option>
 
                     <?php
-                        $res = getServicesProviders('video');
+                        $res = getServices('video');
                         while($row = mysqli_fetch_assoc($res)){
                            $sp = $row['type'];
-                           if($resPhoto['spId']==$spvId){
-                            echo "<option value='$spId' class='option' ";
+                           $spId = $row['spId'];
+                           if($resPhoto['spId']==$currentSpId){
+                            echo "<option value='$currentSpId' class='option' ";
                             echo "selected='selected'";
                             echo ">$sp</option> ";
                     
@@ -227,14 +238,14 @@
                            $sp = $row['name'];
                            $spvId = $row['spId'];
                            if($event['decoration']=='y' || $event['decoration']=='Y' ){ 
-                            $res = getDeco($_POST['bId']);
-                                if($res['spId']==$spvId){
-                                    echo "<option value='$spId' class='option' ";
+                            $resDeco = getDeco($_POST['bId']);
+                                if($resDeco['spId']==$spvId){
+                                    echo "<option value='$spvId' class='option' ";
                                     echo "selected='selected'";
                                     echo ">$sp</option> ";
                             
                                 }else{
-                                    echo "<option value='$spId' class='option'>$sp</option>";  
+                                    echo "<option value='$spvId' class='option'>$sp</option>";  
                                 }
                             }
                         }   
@@ -246,10 +257,13 @@
                     <option value="" class="option">- none -</option>
 
                     <?php
-                        $res = getServicesProviders('deco');
+                        $resDecoPack = getServices('deco');
+                        $resDecoPack = mysqli_fetch_assoc($resDecoPack);
+
+                        $spvId = $resDecoPack['spId'];
                         while($row = mysqli_fetch_assoc($res)){
                             if($res['spId']==$spvId){
-                                echo "<option value='$spId' class='option' ";
+                                echo "<option value='$spvId' class='option' ";
                                 echo "selected='selected'";
                                 echo ">$sp</option> ";
                         
@@ -264,56 +278,7 @@
                     <input type="checkbox" name="needLocation" id="needLocation" class="box" onchange="displaySection('secLocation','needLocation')" <?php if ($event['location'] == "Y" || $event['location'] == "y") echo "checked";?>>
                     <span class="span">Location</span>
             </div>
-            <div class="section secLocation" id="secLocation">
-                <div class="label">Select Location</div>
-                <select name="locationProvider" id="locationProvider" class="select">
-                    <option value="" class="option">- none -</option>
-
-                    <?php
-                        $res = getServicesProviders('location');
-                        while($row = mysqli_fetch_assoc($res)){
-                           $sp = $row['name'];
-                           $spvId = $row['spId'];
-                           echo "<option value='$spvId' class='option'>$sp</option>";
-                           if($event['location']=='y' || $event['location']=='Y' ){ 
-                                $res = getLocation($_POST['bId']);
-                                    if($res['spId']==$spvId){
-                                        $currentLocationProvider = $sp;
-                                        $currentLocation = $res['locationType'];
-                                    }else{
-                                        $currentLocationProvider = 'null';
-                                        $currentLocation = 'null';
-                                    }
-                            }else{
-                                $currentLocationProvider = 'null';
-                                $currentLocation = 'null';
-                            }
-                        }
-                       
-                        
-                    ?>
-                </select>
-                <div class="label">Select Package</div>
-                    <select name="locationType" id="locationType" class="select" >
-                        <option value="" class="option">- none -</option>
-
-                        <?php
-                             $res = getServicesProviders('location');
-                            while($row = mysqli_fetch_assoc($res)){
-                            $sp = $row['type'];
-                                if($resPhoto['spId']==$spvId){
-                                    echo "<option value='$spId' class='option' ";
-                                    echo "selected='selected'";
-                                    echo ">$sp</option> ";
-                            
-                                }else{
-                                    echo "<option value='$spId' class='option'>$sp</option>";  
-                                }
-                            }
-                            ?>
-              
-                    </select>
-                </div>
+            <!--  -->
             <div class="btnSubmit">
                 <button type="submit" name="btnEditEvent">Update Event</button>
             </div>

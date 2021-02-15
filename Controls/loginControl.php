@@ -23,13 +23,13 @@
                 $_SESSION['loggedIn']='true';
                 switch ($_SESSION['userType']){
                     case 'User':
-                        header("location: ../User/dashboard.php");
+                        header("location: ../User/bookings.php");
                         break;
                     case 'Admin':
                         header("location: ../Admin/dashboard.php");
                         break;
                     case 'Vendor':
-                        header("location: ../Vendor/dashboard.php");
+                        header("location: ../Vendor/viewOrders.php");
                         break;
                     default:
                     

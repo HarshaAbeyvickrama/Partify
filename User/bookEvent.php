@@ -94,7 +94,7 @@
                     <option value="" class="option">- none -</option>
                     <!-- <option value="" class="option"></option> add items from php -->
                     <?php
-                        $res = getServicesProviders('photo');
+                        $res = getServices('photo');
                         while($row = mysqli_fetch_assoc($res)){
                            $sp = $row['albumType'];
                            echo "<option value='$sp' class='option'>$sp</option>";
@@ -131,7 +131,7 @@
                     <!-- <option value="" class="option"></option> add items from php -->
 
                     <?php
-                        $res = getServicesProviders('video');
+                        $res = getServices('video');
                         while($row = mysqli_fetch_assoc($res)){
                            $sp = $row['type'];
                            echo "<option value='$sp' class='option'>$sp</option>";
@@ -165,7 +165,7 @@
                         <!-- <option value="" class="option"></option> add items from php -->
 
                         <?php
-                            $res = getServicesProviders('deco');
+                            $res = getServices('deco');
                             while($row = mysqli_fetch_assoc($res)){
                             $sp = $row['type'];
                             echo "<option value='$sp' class='option'>$sp</option>";
@@ -199,7 +199,7 @@
                         <!-- <option value="" class="option"></option> add items from php -->
 
                         <?php
-                             $res = getServicesProviders('location');
+                             $res = getServices('location');
                             while($row = mysqli_fetch_assoc($res)){
                             $sp = $row['type'];
                             echo "<option value='$sp' class='option'>$sp</option>";

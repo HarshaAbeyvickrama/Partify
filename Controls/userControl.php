@@ -203,7 +203,19 @@
         if(!$status){
 
         }
-        header("location: ../User/bookings.php");
+        switch ($_SESSION['userType']) {
+            case 'Admin':
+                header("location: ../Admin/events.php");
+                break;
+            
+            case 'User':
+                header("location: ../User/bookings.php");
+                break;
+            
+            default:
+                # code...
+                break;
+        }
         
     }
 
@@ -237,16 +249,16 @@
                 $sql = "SELECT u.name,u.spId FROM vendor u INNER JOIN service c WHERE u.spId=c.spId AND c.catering='Y'";
                 return mysqli_query($connection,$sql);
             case 'photo':
-                $sql = "SELECT DISTINCT v.name,v.spId FROM vendor v INNER JOIN service s ON  v.spId=s.spId WHERE s.photography='Y';";
+                $sql = "SELECT p.albumType,v.name,v.spId FROM vendor v,service s,photography p WHERE v.spId=s.spId AND s.photography='Y' AND p.spId=s.spId";
                 return mysqli_query($connection,$sql);
             case 'video':
-                $sql = "SELECT DISTINCT v.name,v.spId FROM vendor v INNER JOIN service s ON  v.spId=s.spId WHERE s.videography='Y';";
+                $sql = "SELECT p.type,v.name,v.spId FROM vendor v,service s,videography p WHERE v.spId=s.spId AND s.videography='Y' AND p.spId=s.spId";
                 return mysqli_query($connection,$sql);
             case 'deco':
-                $sql = "SELECT DISTINCT v.name,v.spId FROM vendor v INNER JOIN service s ON  v.spId=s.spId WHERE s.decoration='Y';";
+                $sql = "SELECT p.type,v.name,v.spId FROM vendor v,service s,decoration p WHERE v.spId=s.spId AND s.decoration='Y' AND p.spId=s.spId";
                 return mysqli_query($connection,$sql);
             case 'location':
-                $sql = "SELECT DISTINCT v.name,v.spId FROM vendor v INNER JOIN service s ON  v.spId=s.spId WHERE s.location='Y';";
+                $sql = "SELECT p.packtype as 'type',v.name,v.spId FROM vendor v,service s,location p WHERE v.spId=s.spId AND s.location='Y' AND p.spId=s.spId";
                 return mysqli_query($connection,$sql);
                 
         }
@@ -303,7 +315,7 @@
     }
     function getLocation($spvId){
         global $connection;
-        $sqlMeal = 'SELECT * FROM decorationbooking WHERE bookingId='.$spvId;
+        $sqlMeal = 'SELECT * FROM locationbooking WHERE bookingId='.$spvId;
         $resMeal = mysqli_query($connection,$sqlMeal);
         return mysqli_fetch_assoc($resMeal);
         
