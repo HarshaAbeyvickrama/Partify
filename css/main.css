@@ -18,6 +18,7 @@ body{
     
 }
 .midContent table{
+    width: 100%;
     /* display: block; */
     overflow: auto;
     /* height: auto; */
@@ -27,7 +28,7 @@ body{
 .bookingTable{
     column-width: 150px;
     height: 50vh;
-    width: auto;
+    width: 100%;
     margin-top: 80px;
     margin-left: 50px;
     overflow: auto;

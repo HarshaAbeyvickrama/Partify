@@ -7,70 +7,47 @@
     $db = DBConnection::getInstance();
     $connection = $db->getConnection();
     include('../includes/template.php');
-?> 
- <link rel="stylesheet" type="text/css" href="../css/main.css">
-    <div class="title">
-            <div class="title">VIEW User</div>
-        </div>
-    <div class="midContent">
-        <?php
-        include('../Controls/general.php');
-        $userId=$_POST['uid'];
-        $users = viewUser($userId);
-        // echo $_POST['id'];    
-        // while($row=mysqli_fetch_assoc($users)){
-        //     // if()
-
-        // }
-        ?>
-        <div class="tabel">
-                    <?php
-                         echo "<table class='userTable' border=2>
-                         <thead>
-                         <tr>
-                         <th class='col col2'>Email</th>
-                         <th class='col col3'>Name</th>
-                         <th class='col col5'>Gender</th>
-                         <th class='col col5'>DoB</th>
-                         <th class='col col5'>ContactNo</th>
-                         <th class='col col6'>Address</th>
-                         </tr></thead><tbody>";
-
-                         while($row=mysqli_fetch_assoc($users)){
-                            $email = $row['email'];
-                            $name = $row['fName'].' '.$row['lName'];
-                            $gender = $row['gender'];
-                            $dob = $row['dob'];
-                            $contactNo = $row['contactNo'];
-                            $address = $row['address'];
-                            echo '<br>';
-
-                            
-                            echo '</td><td>'.$email.'</td><td>'.$name.'</td><td>'.$gender.'</td><td>'.$dob.'</td><td>'.$contactNo.'</td><td>'.$address.'</td>';
-                            echo '<td>';
-                            
-                        }
-                            echo '</tbody></table>';
-                    ?>
-        </div>
+    require_once('../Controls/general.php'); 
+        $id = $_POST['uid'];   
+        $res = viewUser($id);
+        while($row=mysqli_fetch_assoc($res)){
+            $userType = $_SESSION['userType'];
+                $email=$row['email'];
+                $name = $row['fName'].' '.$row['lName'];
+                $gender=$row['gender'];
+                $dob=$row['dob'];
+                $contactNo=$row['contactNo'];
+                $address=$row['address'];
+?>
+<link rel="stylesheet" type="text/css" href="../css/profile.css">
+<div class="profile">
+<h2><?php echo $name ?>'s Profile</h2>
+    <div class="wrap">
+    <?php 
+        
+                echo "<div class='lable'>Email  </div> <span>".$email."</span>
+                <div class='lable'>Name  </div> <span>".$name."</span>
+                <div class='lable'>Gender  </div> <span>".$gender."</span>
+                <div class='lable'>DOB  </div> <span>".$dob."</span>
+                <div class='lable'>Contact Number  </div> <span>".$contactNo." </span>
+                <div class='lable'>Address </div> <span>".$address." </span>";
+        }
+    ?>     
+    </div>
+    <div class="forms">
+        <form action="../Controls/deleteAccount.php" method="POST">
+            <button type="submit" id="delete" class="btn" name="btnDelete">Delete Account</button>
+        </form>
+        <form action="./editUser.php" method="POST">
+            <input type="hidden" name="uid" id="uid" value="<?php echo $id ?>">
+            <button type="submit" id="editAccountBtn" class="btn" name="btnEdit">Edit Account</button>
+        </form>
+        
     </div>
     
-?>
+
+    </div>
 </div>
-</div>
-            
-     }
-    ?>
-    <!-- show all users -->
-
-
-    <!-- <style type="text/css">
-
-</style> -->
-
-
-
-
-</div>
+    
 </body>
 </html>
