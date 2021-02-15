@@ -1,4 +1,8 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
 require_once('../Includes/db/dbConnection.php');
 include('./validate.php');
 if (session_status() == PHP_SESSION_NONE) {
@@ -139,6 +143,8 @@ if(isset($_POST['btnAddService'])){
 
         if(isset($_POST['swimmingPool'])){
             $pool='Y';
+        }else{
+            $pool='N';
         }
         if(isset($_POST['airCondition'])){
             $aircondition='Y';
